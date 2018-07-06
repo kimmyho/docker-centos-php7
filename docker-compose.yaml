@@ -1,0 +1,13 @@
+version: '2'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        volumes:
+            - ./sites:/var/www/html
+        ports:
+            - 9000:80
+        container_name: kim-rb-sites
+        restart: always
+        working_dir: /var/www/html
